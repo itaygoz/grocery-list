@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.4](https://github.com/itaygoz/grocery-list/compare/api@0.0.3...api@0.0.4) (2024-08-07)
+
+**Note:** Version bump only for package api
+
+
+
+
+
 ## [0.0.3](https://github.com/itaygoz/grocery-list/compare/api@0.0.2...api@0.0.3) (2024-07-23)
 
 
