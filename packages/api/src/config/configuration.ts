@@ -8,4 +8,10 @@ export default (): Configuration => ({
     host: process.env.MONGODB_HOST,
     port: parseInt(process.env.MONGODB_PORT) || 27017,
   },
+  jwt: {
+    secret: process.env.JWT_SECRET || 'secret',
+    signOptions: {
+      expiresIn: process.env.JWT_EXPIRES_IN || '2h',
+    },
+  },
 });
