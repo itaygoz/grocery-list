@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/itaygoz/grocery-list/compare/api@0.1.0...api@0.2.0) (2024-08-19)
+
+
+### Features
+
+* **user-auth:** add user ceration and authentication ([8e891de](https://github.com/itaygoz/grocery-list/commit/8e891dead49e613d5decd228b9ac57c086fda19b))
+
+
+
+
+
 # [0.1.0](https://github.com/itaygoz/grocery-list/compare/api@0.0.5...api@0.1.0) (2024-08-19)
 
 
