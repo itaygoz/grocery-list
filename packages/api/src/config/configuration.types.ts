@@ -1,6 +1,9 @@
+import { JwtModuleOptions } from '@nestjs/jwt';
+
 export interface Configuration {
   port: number;
   mongodb: MongoDBConfig;
+  jwt: JwtModuleOptions;
 }
 
 export interface MongoDBConfig {
