@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/itaygoz/grocery-list/compare/api@0.0.5...api@0.1.0) (2024-08-19)
+
+
+### Features
+
+* **mongodb:** establish mongodb connection ([33fbf71](https://github.com/itaygoz/grocery-list/commit/33fbf713fddea6c6aba1201dc3f865a76665a027))
+
+
+
+
+
 ## [0.0.5](https://github.com/itaygoz/grocery-list/compare/api@0.0.4...api@0.0.5) (2024-08-07)
 
 **Note:** Version bump only for package api
