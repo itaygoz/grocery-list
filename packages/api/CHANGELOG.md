@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/itaygoz/grocery-list/compare/api@0.2.0...api@0.3.0) (2024-08-24)
+
+
+### Features
+
+* **redis-cache:** add redis cache-manager client ([#10](https://github.com/itaygoz/grocery-list/issues/10)) ([8528ece](https://github.com/itaygoz/grocery-list/commit/8528ece7af8bb86e44bfc9f60ab5436b171eab7a))
+
+
+
+
+
 # [0.2.0](https://github.com/itaygoz/grocery-list/compare/api@0.1.0...api@0.2.0) (2024-08-19)
 
 
