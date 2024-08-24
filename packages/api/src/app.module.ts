@@ -1,14 +1,17 @@
+import { CacheModule } from '@nestjs/cache-manager';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { APP_GUARD } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
+import { redisStore } from 'cache-manager-redis-store';
+import type { RedisClientOptions } from 'redis';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
-import configuration from './config/configuration';
-import { MongoDBConfig } from './config/configuration.types';
-import { UsersModule } from './users/users.module';
-import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
+import configuration from './config/configuration';
+import { MongoDBConfig, RedisConfig } from './config/configuration.types';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -25,6 +28,20 @@ import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 
         return {
           uri: `mongodb://${username}:${password}@${host}:${port}`,
+        };
+      },
+    }),
+    CacheModule.registerAsync<RedisClientOptions>({
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => {
+        const { host, port, ttl } = config.getOrThrow<RedisConfig>('redis');
+
+        return {
+          store: redisStore,
+          max: 10000,
+          ttl,
+          host,
+          port,
         };
       },
     }),
