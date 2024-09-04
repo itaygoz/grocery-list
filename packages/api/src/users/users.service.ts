@@ -9,10 +9,12 @@ export class UsersService {
   private readonly saltRounds = 10;
   constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
-  async createUser(username: string, password: string): Promise<User> {
+  async createUser(username: string, password: string) {
     const hashedPassword = await hash(password, this.saltRounds);
     const newUser = new this.userModel({ username, password: hashedPassword });
-    return newUser.save();
+    const result = await newUser.save();
+
+    return { id: result._id, username: result.username };
   }
 
   async findByName(username: string): Promise<User> {

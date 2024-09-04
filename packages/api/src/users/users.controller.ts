@@ -2,6 +2,7 @@ import { Body, Controller, Post, UseFilters } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { UserExceptionFilter } from './filter/user-exception.filter';
 import { Public } from '../auth/decorators/public.decorator';
+import { CreateUserRequest } from './dto/create-user.request';
 
 @Controller('users')
 @UseFilters(UserExceptionFilter)
@@ -10,10 +11,7 @@ export class UsersController {
 
   @Public()
   @Post('create')
-  async createUser(
-    @Body('username') username: string,
-    @Body('password') password: string,
-  ) {
-    return this.service.createUser(username, password);
+  async createUser(@Body() user: CreateUserRequest) {
+    return this.service.createUser(user.username, user.password);
   }
 }
