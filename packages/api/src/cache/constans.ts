@@ -1,0 +1,2 @@
+export const CACHE_KEY_PATTERN = 'CACHE_KEY_PATTERN';
+export const CACHE_KEY_PARAMS = 'CACHE_KEY_PARAMS';
