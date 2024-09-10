@@ -21,6 +21,6 @@ export class AuthDriver {
   async getValidToken() {
     await this.usersDriver.createUser(this.usersDriver.DEFAULT_USER);
     const res = await this.login(this.usersDriver.DEFAULT_USER);
-    return res.body.access_token;
+    return res.body.access_token as string;
   }
 }

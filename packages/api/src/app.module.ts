@@ -1,7 +1,7 @@
 import { CacheModule } from '@nestjs/cache-manager';
 import { Module, ValidationPipe } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
+import { APP_GUARD, APP_PIPE } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
 import { redisStore } from 'cache-manager-redis-store';
 import type { RedisClientOptions } from 'redis';
@@ -11,6 +11,7 @@ import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 import configuration from './config/configuration';
 import { MongoDBConfig, RedisConfig } from './config/configuration.types';
+import { ListsModule } from './lists/lists.module';
 import { UsersModule } from './users/users.module';
 
 @Module({
@@ -32,6 +33,7 @@ import { UsersModule } from './users/users.module';
       },
     }),
     CacheModule.registerAsync<RedisClientOptions>({
+      isGlobal: true,
       inject: [ConfigService],
       useFactory: (config: ConfigService) => {
         const { host, port, ttl } = config.getOrThrow<RedisConfig>('redis');
@@ -47,6 +49,7 @@ import { UsersModule } from './users/users.module';
     }),
     UsersModule,
     AuthModule,
+    ListsModule,
   ],
   controllers: [AppController],
   providers: [
