@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/itaygoz/grocery-list/compare/api@0.3.2...api@0.4.0) (2024-09-10)
+
+
+### Features
+
+* **lists:** create lists logic ([#13](https://github.com/itaygoz/grocery-list/issues/13)) ([83de2a1](https://github.com/itaygoz/grocery-list/commit/83de2a1c29d506728a2e75eb4a2ae8ff139004eb))
+
+
+
+
+
 ## [0.3.2](https://github.com/itaygoz/grocery-list/compare/api@0.3.1...api@0.3.2) (2024-09-04)
 
 **Note:** Version bump only for package api
